@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
 import './App.css';
 import Dialogs from './components/Dialogs/Dialogs';
@@ -14,10 +15,11 @@ const App = () => {
       <Navbar />
 
       <div className="app-wrapper-content">
-        <Dialogs />
+        <Switch>
+          <Route path="/dialogs" component={Dialogs} />
+          <Route path="/profile" component={Profile} />
+        </Switch>
       </div>
-      
-      {/* <Profile /> */}
     </div>
   );
 };
